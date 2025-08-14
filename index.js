@@ -1,9 +1,13 @@
 const express = require('express');
 const axios = require('axios');
-
+const cors=require('cors');
 const app = express();
 const PORT = 3000;
-
+app.use(cors({
+  origin: "*", // Allow all origins
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 // In-memory data store for students
 let students = [];
 
