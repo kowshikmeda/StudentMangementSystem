@@ -1,0 +1,18 @@
+Brief Implementation Summary
+For this assignment, I chose the Backend Development option and created a simple Student Management System API using Node.js and the Express.js framework. The primary objective was to build a set of RESTful endpoints to manage student data, with a focus on simplicity and functionality.
+
+Data Handling
+The system does not use a persistent database. Instead, student data is stored in memory. Upon application startup, a GET request is made to https://dummyjson.com/users to fetch an initial set of user data. This data is then transformed into a student format, with new fields like course and status being randomly assigned, and the original height and weight values are used to calculate the BMI for each student. This transformed data populates a global array that acts as our in-memory data store.
+
+Core Endpoints
+I implemented four main endpoints:
+
+GET /students: Retrieves and returns all student records from the in-memory array.
+
+GET /students/:id: Finds and returns a single student's data based on the studentId provided in the URL parameter.
+
+POST /students: Accepts new student data in a JSON request body. It automatically generates a unique studentId and calculates the bmi before adding the new student to the in-memory store.
+
+GET /dashboard/stats: Provides a statistical summary of the student data. This includes the total student count, gender distribution, status distribution, and the calculated average BMI of all students.
+
+The codebase is organized into a single index.js file for clarity and simplicity, and error handling is included for robust data fetching at startup. The API is designed to return clean JSON responses for all requests.
