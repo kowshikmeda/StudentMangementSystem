@@ -49,18 +49,35 @@ Returns a list of all student objects.
 **Response Example**:
 ```json
 [
-  {
-     "studentId": 1,
-     "firstName": "Terry",
-     "lastName": "Medhurst",
-     "email": "atuny0@sohu.com",
-     "gender": "male",
-     "height": 172,
-     "weight": 77,
-     "bmi": "26.04",
-     "course": "Data Science",
-     "status": "Active"
-  }
+ {
+    "studentId": 1,
+    "firstName": "Michael",
+    "lastName": "Williams",
+    "email": "michael.williams@x.dummyjson.com",
+    "phone": "+49 258-627-6644",
+    "age": 35,
+    "gender": "male",
+    "bloodgrp": "B+",
+    "height": 186.22,
+    "weight": 76.32,
+    "bmi": "22.01",
+    "image": "https://dummyjson.com/icon/michaelw/128",
+    "university": "Ohio State University",
+    "profession": "Support Specialist",
+    "address": {
+        "address": "385 Fifth Street",
+        "city": "Houston",
+        "state": "Alabama",
+        "stateCode": "AL",
+        "postalCode": "38807",
+        "coordinates": {
+            "lat": 22.815468,
+            "lng": 115.608581
+        },
+        "country": "United States"
+    },
+    "role": "admin"
+}
   // ... more students
 ]
 ```
@@ -71,22 +88,39 @@ Retrieves a single student's details using a specific `studentId`.
 
 **Example Request**:
 ```bash
-GET http://localhost:3000/students/5
+GET http://localhost:3000/students/2
 ```
 
 **Example Response**:
 ```json
 {
-    "studentId": 5,
-    "firstName": "Terry",
-    "lastName": "Medhurst",
-    "email": "atuny0@sohu.com",
-    "gender": "female",
-    "height": 160,
-    "weight": 55,
-    "bmi": "21.48",
-    "course": "Computer Science",
-    "status": "On Leave"
+    "studentId": 2,
+    "firstName": "Michael",
+    "lastName": "Williams",
+    "email": "michael.williams@x.dummyjson.com",
+    "phone": "+49 258-627-6644",
+    "age": 35,
+    "gender": "male",
+    "bloodgrp": "B+",
+    "height": 186.22,
+    "weight": 76.32,
+    "bmi": "22.01",
+    "image": "https://dummyjson.com/icon/michaelw/128",
+    "university": "Ohio State University",
+    "profession": "Support Specialist",
+    "address": {
+        "address": "385 Fifth Street",
+        "city": "Houston",
+        "state": "Alabama",
+        "stateCode": "AL",
+        "postalCode": "38807",
+        "coordinates": {
+            "lat": 22.815468,
+            "lng": 115.608581
+        },
+        "country": "United States"
+    },
+    "role": "admin"
 }
 ```
 
@@ -102,8 +136,7 @@ Adds a new student.
   "gender": "male",
   "height": 180,
   "weight": 75,
-  "course": "Computer Science",
-  "status": "Active"
+  
 }
 ```
 
@@ -123,13 +156,20 @@ Returns a summary of student statistics.
      "boys": 55,
      "girls": 45
   },
-  "statusDistribution": {
-     "Active": 35,
-     "On Leave": 32,
-     "Graduated": 33
-  },
-  "bmiStats": {
-     "averageBMI": 22.05
-  }
+ "bloodGroupDistribution": {
+        "O-": 6,
+        "B+": 5,
+        "AB+": 4,
+        "AB-": 7,
+        "A-": 2,
+        "B-": 2,
+        "A+": 1,
+        "O+": 3
+    },
+    "bmiStats": {
+        "averageBMI": 22.4,
+        "averageHeight": 178.98,
+        "averageWeight": 70.73
+    }
 }
 ```
