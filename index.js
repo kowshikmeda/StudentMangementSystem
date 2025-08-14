@@ -129,7 +129,7 @@ app.get('/dashboard/stats', (req, res) => {
     });
 });
 app.use('/',(req,res)=>{
-  res.send(<h1>Welcome to Student Mangement System API</h1>);
+  res.send("<h1>Welcome to Student Mangement System API</h1>");
 });
 // Initialize data and start the server
 initializeStudentData().then(() => {
